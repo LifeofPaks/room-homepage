@@ -1,0 +1,8 @@
+@import '../../styles/Responsive.scss';
+@import '../../styles/Variables.scss';
+
+.layout{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}

@@ -1,0 +1,238 @@
+@import '../../styles/Responsive.scss';
+@import '../../styles/Variables.scss';
+
+.topSection{
+    width: 100%;
+    display: flex;
+    position: relative;
+
+    @include Mobile{
+        flex-direction: column;
+        height: initial;
+        width: 100%;
+    }
+
+    .left{
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+
+        .hero{
+            height: 100%;
+
+            @include Mobile{
+                width: 110%;
+            }
+    
+        }
+
+        nav{
+            position: absolute;
+            top: 4rem;
+            left: 4rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            width: 100%;
+
+            @include Mobile{
+                top: 3rem;
+                left: 2rem;
+                gap: 0;
+            }
+
+            .hamburger{
+                display: none;
+                cursor: pointer;
+
+                @include Mobile{
+                    display: block;
+                    justify-content: space-between;
+                }
+            }
+
+            .logo{
+                cursor: pointer;
+
+
+                @include Mobile{
+                    width: 80%;
+                    text-align: center;
+
+                }
+            }
+
+            .navLinks{
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                color: $White;
+                font-size: 15px;
+                font-weight: 600;
+
+                .closeMenu{
+                    display: none;
+                    cursor: pointer;
+                }
+
+                @include Mobile{
+                    position: fixed;
+                    width: 100%;
+                    left: 100%;
+                    top: 0;
+                    background: $White;
+                    color: $Black;  
+                    padding: 3rem 2rem;
+                    opacity: 0;
+                    transition: .5s;
+
+                    &.show{
+                        left: 0;
+                        opacity: 1;
+                    }
+
+                    .closeMenu{
+
+                        @include Mobile{
+                            display: block;
+                            margin-right: 3rem;
+                        }
+                    }
+                }
+
+                li{
+                    cursor: pointer;
+                    position: relative;
+                    
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: -10px;
+                        width: 0;
+                        left: 50%;
+                        height: 2px;
+                        background: $White;
+                        transition: .3s;
+
+                        @include Mobile{
+                            display: none;
+                        }
+                    }
+
+                    &:hover{
+
+                        &::before{
+                            width: 100%;
+                            left: 0;
+                        }
+                       
+                    }
+
+                   
+                }
+            }
+        }
+
+        .MoblieSlideBtnsWrapper{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            display: none;
+
+            @include Mobile{
+                display: flex;
+            }
+    
+
+            button{
+                background: $Black;
+                padding: 1.7rem 2rem;
+                transition: .3s;
+
+                @include Mobile{
+                    padding: 1rem 1.5rem;
+
+                    img{
+                        width: 10px;
+                    }
+                }
+
+                &:hover{
+                    background: $Very-Dark-Gray;
+                }
+            }
+        }   
+    }
+
+    .right{
+        padding: 8rem 6rem;
+        position: relative;
+        background: $White;
+        width: 100%;
+
+        @include Mobile{
+            position: unset;
+            padding: 3rem 2rem;
+        }
+
+        h1{
+            color: $Black;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-transform: capitalize;
+
+            @include Mobile{
+                font-size: 2rem;
+            }
+        }
+
+        p{
+            color: $Dark-Gray;
+            line-height: 23px;
+            margin-bottom: 1.5rem;
+        }
+
+        .shopBtn{
+            display: flex;
+            align-items: center;
+            letter-spacing: 10px;
+            gap: 1rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 14px;
+            color: $Very-Dark-Gray;
+            transition: .3s;
+
+            &:hover{
+                color: $Dark-Gray;
+            }
+        }
+
+        .slideBtnsWrapper{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+
+            @include Mobile{
+                display: none;
+            }
+    
+
+            button{
+                background: $Black;
+                padding: 1.7rem 2rem;
+                transition: .3s;
+
+                &:hover{
+                    background: $Very-Dark-Gray;
+                }
+            }
+        }
+    }
+}
